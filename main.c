@@ -2,6 +2,7 @@
 
 void printArr(int* arr, int len);
 void quicksort(int* arr, int len);
+void parallelQuicksort(int* arr, int len);
 
 void main()
 {
