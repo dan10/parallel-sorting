@@ -11,7 +11,6 @@ debug:
 	gcc -g -c main.c
 	gcc -g -c quicksort.c
 	gcc -g main.o quicksort.o -o debug
-	gdb debug
 
 clear:
 	rm -rf *.o output debug
