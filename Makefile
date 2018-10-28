@@ -15,7 +15,6 @@ debug:
 	gcc -g -c quicksort.c
 	gcc -g -c parallelQuicksort.c
 	gcc -g main.o quicksort.o parallelQuicksort.o -o debug
-	gdb debug
 
 clear:
 	rm -rf *.o output debug
