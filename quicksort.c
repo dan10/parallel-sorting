@@ -1,15 +1,15 @@
-void quicksortR(int* arr, int start, int end);
+void quicksortRecursive(int* arr, int start, int end);
 void swap(int* arr, int i, int j);
 
 // Quicksort entry-point
 void quicksort(int* arr, int len)
 {
     if (len > 0)
-        quicksortR(arr, 0, len - 1);
+        quicksortRecursive(arr, 0, len - 1);
 }
 
 // Recursive quicksort implementarion
-void quicksortR(int* arr, int start, int end)
+void quicksortRecursive(int* arr, int start, int end)
 {
     int i = start;
     int j = end;
@@ -33,8 +33,8 @@ void quicksortR(int* arr, int start, int end)
             }
         }
 
-        if (start < j) quicksortR(arr, start, j); // Calls quicksort on the left-most part of the array
-        if (end   > i) quicksortR(arr, i,   end); // Calls quicksort on the right-most part of the array
+        if (start < j) quicksortRecursive(arr, start, j); // Calls quicksort on the left-most part of the array
+        if (end   > i) quicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
     }
 }
 
