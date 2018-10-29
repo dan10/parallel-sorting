@@ -37,11 +37,3 @@ void parallelQuicksortRecursive(int* arr, int start, int end)
         if (end   > i) parallelQuicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
     }
 }
-
-// Swaps two values in an integer array
-void swap(int* arr, int i, int j)
-{
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
-}
