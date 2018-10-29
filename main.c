@@ -1,14 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <stdbool.h>
 
 void printArr(int* arr, int len);
 void quicksort(int* arr, int len);
 void parallelQuicksort(int* arr, int len);
+void copyArr(int* arr, int n, int* newArr);
+bool isSorted(int* arr, int n);
 
 void main()
 {
     int n = 10000;
     int arr[n];
+    int* unorderedArr = (int *)malloc(n * sizeof(int));
     int buffer = -1;
     int i;
     
@@ -18,6 +23,29 @@ void main()
         scanf("%d", &buffer);
         arr[i] = buffer;
     }
+
+    copyArr(arr, n, unorderedArr);
+
+    free(unorderedArr);
+}
+
+// Determines if an array is sorted
+bool isSorted(int* arr, int n)
+{
+    int i;
+
+    for(i = 1; i < n; i++)
+        if (arr[i] < arr[i - 1]) return false;
+
+    return true;    
+}
+
+// Copies an array into another
+void copyArr(int* arr, int n, int* newArr)
+{
+    int i;
+
+    for(i = 0; i < n; i++) newArr[i] = arr[i];
 }
 
 // Prints and integer array 'arr' of length 'len'
