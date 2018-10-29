@@ -41,7 +41,7 @@ void main()
 
     startTime = clock();
 
-    parallelQuicksort(arr, n);
+    parallelQuicksort(unorderedArr, n);
 
     endTime = clock();
 
