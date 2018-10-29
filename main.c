@@ -26,6 +26,27 @@ void main()
 
     copyArr(arr, n, unorderedArr);
 
+    // Run sorting here
+
+    clock_t startTime;
+    clock_t endTime;
+
+    startTime = clock();
+
+    quicksort(arr, n);
+
+    endTime = clock();
+
+    printf("Sequential:\t%ld\n", (endTime - startTime));
+
+    startTime = clock();
+
+    parallelQuicksort(arr, n);
+
+    endTime = clock();
+
+    printf("Parallel:\t%ld\n", (endTime - startTime));
+
     free(unorderedArr);
 }
 
