@@ -32,8 +32,15 @@ void parallelQuicksortRecursive(int* arr, int start, int end)
                 j--;
             }
         }
+        
+        #pragma omp parallel sections
+        {
+            #pragma omp section
+            parallelQuicksortRecursive(arr, start, j); // Calls quicksort on the left-most part of the array
 
-        if (start < j) parallelQuicksortRecursive(arr, start, j); // Calls quicksort on the left-most part of the array
-        if (end   > i) parallelQuicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
+            #pragma omp section
+            parallelQuicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
+        }
+
     }
 }
