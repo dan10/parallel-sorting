@@ -33,8 +33,8 @@ void quicksortRecursive(int* arr, int start, int end)
             }
         }
 
-        if (start < j) quicksortRecursive(arr, start, j); // Calls quicksort on the left-most part of the array
-        if (end   > i) quicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
+        quicksortRecursive(arr, start, j); // Calls quicksort on the left-most part of the array
+        quicksortRecursive(arr, i,   end); // Calls quicksort on the right-most part of the array
     }
 }
 
